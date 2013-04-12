@@ -41,12 +41,12 @@ If indexes are partitioned, you might not see any UNUSABLE index, but indexes wi
 
 #### Check index status
 
-  select distinct status from dba_indexes;
+    select distinct status from dba_indexes;
 
 #### Check index partitions status
 
-  select distinct status from dba_ind_partitions;
+    select distinct status from dba_ind_partitions;
 
 #### Check index sub-partitions status
 
-  select distinct status from dba_ind_subpartitions;
+    select distinct status from dba_ind_subpartitions;
