@@ -1,5 +1,15 @@
 # Oracle
 
+## AWR (Automatic Workload Repository)
+
+
+[Automatic Workload Repository (AWR) in Oracle Database 10g](http://www.oracle-base.com/articles/10g/automatic-workload-repository-10g.php)
+
+> Oracle have provided many performance gathering and reporting tools over the years. Originally the UTLBSTAT/UTLESTAT scripts were used to monitor performance metrics. Oracle8i introduced the Statspack functionality which Oracle9i extended. In Oracle 10g statspack has evolved into the Automatic Workload Repository (AWR).
+
+    sqlplus "/as sysdba"
+    @$ORACLE_HOME/rdbms/admin/awrrpt.sql
+
 ## Index
 
 ### Major Data Dictionary view to manage Index
