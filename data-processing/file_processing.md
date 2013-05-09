@@ -2,7 +2,7 @@
 
 #### grep
 
-  grep . FILE
+    grep . FILE
 
 #### awk
 
