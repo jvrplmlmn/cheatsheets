@@ -11,8 +11,9 @@ import sys
 import time
 import re
 
+
 class Message:
-    def __init__(self, to_addr, from_addr, date_str, subject, filename, message_body ):
+    def __init__(self, to_addr, from_addr, date_str, subject, filename, message_body):
         self.to_addr = to_addr
         self.from_addr = from_addr
         self.date_str = date_str
@@ -22,21 +23,21 @@ class Message:
 
     def build_smtp_message(self):
         # FIXME Implement this so the correct SMTP formatted body is generated...
-        return 'From: %s\r\nTo: %s\r\nSubject: %s\r\nDate: %s\r\n\r\n%s' % ( self.from_addr, self.to_addr, self.subject, self.date_str, self.message_body )
+        return 'From: %s\r\nTo: %s\r\nSubject: %s\r\nDate: %s\r\n\r\n%s' % (self.from_addr, self.to_addr, self.subject, self.date_str, self.message_body)
 
     def niall():
         return(1)
 
     def send(self, serverAddress):
-        server = smtplib.SMTP( serverAddress )
-        if re.match(".*\.html$",self.filename):
+        server = smtplib.SMTP(serverAddress)
+        if re.match(".*\.html$", self.filename):
             message = self.createhtmlmail()
-            server.sendmail( self.from_addr, self.to_addr, message )
+            server.sendmail(self.from_addr, self.to_addr, message)
         else:
-            server.sendmail( self.from_addr, self.to_addr, self.build_smtp_message() )
+            server.sendmail(self.from_addr, self.to_addr, self.build_smtp_message())
         server.quit()
 
-    def createhtmlmail (self):
+    def createhtmlmail(self):
         #Create a mime-message that will render HTML in popular MUAs, text in better ones
         import MimeWriter
         import mimetools
@@ -45,7 +46,7 @@ class Message:
         html = self.message_body
         text = self.message_body
 
-        out = cStringIO.StringIO() # output buffer for our message
+        out = cStringIO.StringIO()  # output buffer for our message
         htmlin = cStringIO.StringIO(html)
         txtin = cStringIO.StringIO(text)
         writer = MimeWriter.MimeWriter(out)
@@ -97,10 +98,10 @@ if __name__ == '__main__':
         fromaddr = sys.argv[2]
         toaddr = sys.argv[3]
         filename = sys.argv[4]
-        subject = ' '.join( sys.argv[5:] )
-        if not os.path.exists( filename ):
+        subject = ' '.join(sys.argv[5:])
+        if not os.path.exists(filename):
             raise 'File %s does not exist' % filename
-        if not os.path.isfile( filename ):
+        if not os.path.isfile(filename):
             raise '%s is not a file' % filename
     except:
         print 'Failed to read required parameters: %s' % sys.exc_info()[0]
@@ -111,10 +112,10 @@ if __name__ == '__main__':
         sys.exit(1)
 
     try:
-        f = open( filename )
+        f = open(filename)
         filecontents = f.read()
         f.close()
-        Message( toaddr, fromaddr, time.asctime(), subject, filename, filecontents ).send( smtp_hostname )
+        Message(toaddr, fromaddr, time.asctime(), subject, filename, filecontents).send(smtp_hostname)
     except:
         print 'Failed to send email: %s' % sys.exc_info()[0]
         sys.exit(1)
