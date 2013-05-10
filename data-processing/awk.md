@@ -4,8 +4,8 @@
 
 ### Print the last field of each line
 
-  awk '{ print $NF }'
+    awk '{ print $NF }'
 
 ### Print the last field of the last line
 
-  awk '{ field = $NF }; END{ print field }'
+    awk '{ field = $NF }; END{ print field }'
