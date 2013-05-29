@@ -1,9 +1,17 @@
+-- --------------------------------------
+-- Misc stuff about sessions, locks, etc.
+-- --------------------------------------
+-- References:
+-- http://stackoverflow.com/questions/622289/how-to-check-oracle-database-for-long-running-queries
+
+
+
 -- Locks
 select
   object_name, 
   object_type, 
   session_id, 
-  type, 		-- Type or system/user lock
+  type,   	-- Type or system/user lock
   lmode,    	-- lock mode in which session holds lock
   request, 
   block, 
