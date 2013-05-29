@@ -28,7 +28,7 @@ set pages 500 lines 200
 col username format a16
 col sid for 99999
 select
-	w.sid,
+w.sid,
 	s.serial#,
 	p.spid,
 	s.username,
