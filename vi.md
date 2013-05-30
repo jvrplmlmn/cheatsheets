@@ -2,6 +2,49 @@
 
 ## Key commands
 
+### Cursor Movement
+
+* **h or left arrow** Move left one character.
+* **j or down arrow** Move down one line.
+* **k or up arrow** Move up one line.
+* **l or right arrow** Move right one character.
+
+### Insert text
+
+* **i** Insert at the current cursor position.
+* **I** Insert at the beginning of the current line.
+* **a** Append after the current cursor position.
+* **A** Append to the end of the current line.
+* **o** Start a new line after the current line.
+* **O** Start a new line before the current line.
+
+### Text navigation
+
+* **H** Move to the top of the screen.
+* **L** Move to the bottom of the screen.
+* **G** Move to the end of the file.
+* **w** Move forward one word.
+* **b** Move backward one word.
+* **0 (zero)** Move to the beginning of the current line.
+* **^** Move to the first nonwhitespace character on the current line.
+* **$** Move to the end of the current line.
+* **Ctrl-B** Move up (back) one screen.
+* **Ctrl-F** Move down (forward) one screen.
+
+### Search
+
+* **fg** Search the **g** character to the right of the current cursor position.
+* **Fg** Search the **g** character to the left of the current cursor position.
+* **;** Repeats the last search done with **f**.
+* **,** Repeats the last search done with **f** (the other way around).
+* **/text** Search ***text*** downwards from the current position.
+* **?text** Search ***text*** upwards from the current position.
+* **/^text$** Search a line that only conatains ***text***.
+* **/tex** Search any string that starts with ***tex***.
+* **xt$** Search any string that ends with ***xt***.
+
+## Key commands (table)
+
 Key command | Description
 ----------- | -----------
 h or left arrow | Move left one character.
